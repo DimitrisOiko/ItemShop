@@ -9,7 +9,12 @@
     function ProductListCtrl(productResource) {
         var vm = this;
 
-        productResource.query(function (data) {
+        vm.searchCriteria = "GDN";
+
+        productResource.query({
+            $filter: "Price le 20 and Price ge 10",
+            $orderby:"Price"},
+            function (data) {
             vm.products = data;
         });
     }

@@ -5,9 +5,11 @@ using System.Linq;
 using System.Net;
 using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace ItemShop.WebAPI.Controllers
 {
+    [EnableCorsAttribute("http://localhost:53462", "*", "*")]
     public class ProductsController : ApiController
     {
         // GET: api/Products
